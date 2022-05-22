@@ -3,6 +3,8 @@ package com.events.events.controllers;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.events.events.models.EventModel;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("events") // URL: localhost:8080/events
 public class EventController {
     
-    public static List<String> events = new ArrayList<>();
+    public static List<EventModel> events = new ArrayList<>();
 
     // responds to GET requests at URL "/events"
     @GetMapping
@@ -32,7 +34,7 @@ public class EventController {
     // responds to POST requests at URL "/events/form"
     @PostMapping("form")
     public String processEventForm(@RequestParam String name) {
-        events.add(name);
+        events.add(new EventModel(name));
         return "redirect:"; // to controller method with URL: "/events"
     }
 
