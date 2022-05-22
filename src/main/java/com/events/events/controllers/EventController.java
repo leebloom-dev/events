@@ -8,6 +8,7 @@ import com.events.events.models.EventModel;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -33,8 +34,8 @@ public class EventController {
 
     // responds to POST requests at URL "/events/form"
     @PostMapping("form")
-    public String processEventForm(@RequestParam String name) {
-        events.add(new EventModel(name));
+    public String processEventForm(@ModelAttribute EventModel event) {
+        events.add(event);
         return "redirect:"; // to controller method with URL: "/events"
     }
 
