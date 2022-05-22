@@ -13,5 +13,20 @@
         <!-- Title -->
         <h1>Events Home Page</h1>
 
+        <hr>
+
+        <!-- Event Table -->
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Events</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="event : ${events}">
+                    <td th:text="${event}">Event Name</td>
+                </tr>
+            </tbody>
+        </table>
     </body>
 </html>
