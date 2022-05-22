@@ -10,23 +10,28 @@
 
     <!-- BODY CONTENT -->
 
-        <!-- Title -->
-        <h1>Events Home Page</h1>
+        <div class="container">
 
-        <hr>
+            <!-- Title -->
+            <h1>Events Home Page</h1>
 
-        <!-- Event Table -->
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Events</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr th:each="event : ${events}">
-                    <td th:text="${event}">Event Name</td>
-                </tr>
-            </tbody>
-        </table>
+            <hr>
+
+            <!-- Event Table -->
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Events</th>
+                    </tr>
+                </thead>
+                <tb ody>
+                    <tr th:each="event : ${events}">
+                        <td th:text="${event.name}">Event Name</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
     </body>
 </html>
