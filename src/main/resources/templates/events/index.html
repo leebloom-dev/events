@@ -21,11 +21,13 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
+                        <th>#</th>
                         <th>Events</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr th:each="event : ${events}">
+                        <td th:text="${event.id}">Event ID</td>
                         <td th:text="${event.name}">Event Name</td>
                     </tr>
                 </tbody>
