@@ -25,12 +25,16 @@
                         <tr>
                             <th>#</th>
                             <th>Events</th>
+                            <th>Description</th>
+                            <th>Contact Email</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr th:each="event : ${events}">
                             <td><input type="checkbox" name="eventIds" th:value="${event.id}" /></td>
                             <td th:text="${event.name}">Event Name</td>
+                            <td th:text="${event.description}">Description</td>
+                            <td th:text="${event.contactEmail}">Contact Email</td>
                         </tr>
                     </tbody>
                 </table>
