@@ -29,8 +29,8 @@ public class EventController {
 
     // responds to POST requests at URL "/events/form"
     @PostMapping("form")
-    public String processEventForm(@RequestParam String name) {
-        EventData.add(new EventModel(name));
+    public String processEventForm(@RequestParam String name, @RequestParam String description, @RequestParam String contactEmail) {
+        EventData.add(new EventModel(name, description, contactEmail));
         return "redirect:"; // to controller method with URL: "/events"
     }
 
