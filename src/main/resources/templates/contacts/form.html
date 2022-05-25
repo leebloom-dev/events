@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+    <head th:replace="fragments :: head"></head>
+    <body>
+
+    <!-- HEADER -->
+
+        <!-- Navigation -->
+        <nav th:replace="fragments :: navigation"></nav>
+
+    <!-- BODY CONTENT -->
+    
+        <div class="container">
+
+            <!-- Title -->
+            <h1 th:text="${title}">title</h1>
+
+            <!-- Contact Form -->
+            <form method="post" action="/contacts/form">
+                <!-- First Name -->
+                <div class="form-group">
+                    <label for="firstName">Enter your first name:</label>
+                    <input class="form-control" id="firstName" type="text" placeholder="first name" name="firstName" />
+                    <p th:text="${errorMsgFirstName}" style="color: red"></p>
+                </div>
+                <!-- Last Name -->
+                <div class="form-group">
+                    <label for="lastName">Enter your last name:</label>
+                    <input class="form-control" id="lastName" placeholder="last name" name="lastName" />
+                    <p th:text="${errorMsgLastName}" style="color: red"></p>
+                </div>
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email">Enter your email:</label>
+                    <input class="form-control" id="email" placeholder="email" name="email" />
+                    <p th:text="${errorMsgEmail}" style="color: red"></p>
+                </div>
+                <!-- Submit Button -->
+                <input class="btn btn-primary" type="submit" value="submit" />
+            </form>
+
+        </div>
+
+    </body>
+</html>
