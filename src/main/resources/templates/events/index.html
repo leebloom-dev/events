@@ -13,11 +13,17 @@
         <div class="container">
 
             <!-- Title -->
-            <h1>Events Home Page</h1>
+            <h1 th:text="${title}">title</h1>
 
             <hr>
 
             <!-- Event Table -->
+            <a href="/events/form">
+                <button class="btn btn-secondary">Add Event</button>
+            </a>
+            <a href="/events/delete">
+                <button class="btn btn-warning">Delete Event</button>
+            </a>
             <table class="table table-striped">
                 <thead>
                     <tr>

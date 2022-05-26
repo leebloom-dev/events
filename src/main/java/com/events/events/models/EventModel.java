@@ -20,15 +20,14 @@ public class EventModel {
     private String contactEmail;
 
     public EventModel(String name, String description, String contactEmail) {
-        this.id = nextId;
         this.name = name;
         this.description = description;
         this.contactEmail = contactEmail;
-        nextId++;
     }
 
     public EventModel() {
-        
+        this.id = nextId;
+        nextId++;
     }
 
     public int getId() {
